@@ -1,0 +1,269 @@
+.explorePage {
+    min-height: calc(100vh - 70px);
+    background:
+        radial-gradient(circle at 12% 12%, rgba(98, 60, 255, 0.09), transparent 28%),
+        radial-gradient(circle at 88% 8%, rgba(75, 132, 255, 0.1), transparent 30%),
+        #ffffff;
+    color: #15152c;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.exploreHero {
+    padding: 58px 80px 42px;
+    background: linear-gradient(105deg, #ffffff 0%, #ffffff 55%, #f2efff 55.2%, #ebe7ff 100%);
+    border-bottom: 1px solid #eceaf7;
+}
+
+.pageBadge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 0 14px;
+    color: #623cff;
+    background: #f0ebff;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 850;
+    margin-bottom: 16px;
+}
+
+.exploreHero h1 {
+    max-width: 720px;
+    margin: 0 0 16px;
+    color: #121226;
+    font-size: clamp(2.5rem, 5vw, 4.4rem);
+    line-height: 1;
+    font-weight: 850;
+}
+
+.exploreHero p {
+    max-width: 680px;
+    margin: 0;
+    color: #555872;
+    font-size: 1.1rem;
+    line-height: 1.55;
+}
+
+.exploreToolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 18px;
+    width: min(1120px, calc(100% - 40px));
+    margin: 32px auto 24px;
+}
+
+.searchBox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 52px;
+    padding: 0 16px;
+    background: #ffffff;
+    border: 1px solid #dfe0ee;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(45, 37, 100, 0.06);
+}
+
+.searchBox span {
+    opacity: 0.65;
+}
+
+.searchBox input,
+.exploreToolbar select {
+    width: 100%;
+    border: 0;
+    outline: none;
+    color: #17172f;
+    background: transparent;
+    font-size: 0.95rem;
+}
+
+.searchBox input::placeholder {
+    color: #9699ad;
+}
+
+.exploreToolbar select {
+    height: 52px;
+    padding: 0 14px;
+    background: #ffffff;
+    border: 1px solid #dfe0ee;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(45, 37, 100, 0.06);
+    font-weight: 700;
+}
+
+.loadingText {
+    width: min(1120px, calc(100% - 40px));
+    margin: 28px auto;
+    color: #5d6078;
+    font-weight: 700;
+}
+
+.emptyState {
+    width: min(1120px, calc(100% - 40px));
+    margin: 28px auto;
+    padding: 46px 24px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e5e5f2;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(45, 37, 100, 0.08);
+}
+
+.emptyState h2 {
+    margin: 0 0 8px;
+    color: #15152c;
+}
+
+.emptyState p {
+    margin: 0;
+    color: #5d6078;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto 60px;
+}
+
+.skillCard {
+    display: flex;
+    flex-direction: column;
+    min-height: 310px;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e5e5f2;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(45, 37, 100, 0.08);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.skillCard:hover {
+    transform: translateY(-4px);
+    border-color: #c9c0ff;
+    box-shadow: 0 24px 55px rgba(45, 37, 100, 0.12);
+}
+
+.skillCardTop {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.skillAvatar {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    color: #ffffff;
+    background: linear-gradient(135deg, #623cff, #7f62ff);
+    border-radius: 50%;
+    font-weight: 900;
+}
+
+.skillCard h3 {
+    margin: 0 0 5px;
+    color: #15152c;
+    font-size: 1.12rem;
+}
+
+.postedBy {
+    margin: 0;
+    color: #6a6d83;
+    font-size: 0.84rem;
+    line-height: 1.35;
+}
+
+.categoryTag {
+    align-self: flex-start;
+    padding: 6px 13px;
+    color: #623cff;
+    background: #f0ebff;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 850;
+}
+
+.exchangeBox {
+    margin: 18px 0 14px;
+    padding: 14px;
+    background: #fbfaff;
+    border: 1px solid #ece8ff;
+    border-radius: 12px;
+}
+
+.exchangeLabel {
+    margin: 0 0 5px;
+    color: #7a7d92;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.wantedSkill {
+    margin: 0;
+    color: #17172f;
+    font-size: 1rem;
+    font-weight: 850;
+}
+
+.description {
+    flex: 1;
+    margin: 0 0 18px;
+    color: #5d6078;
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.connectBtn {
+    width: 100%;
+    min-height: 44px;
+    color: #ffffff;
+    background: #623cff;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 850;
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(98, 60, 255, 0.22);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.connectBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 34px rgba(98, 60, 255, 0.28);
+}
+
+.connectStatusText {
+    margin: 0;
+    padding: 12px 14px;
+    color: #208245;
+    background: #dff8e7;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 850;
+    text-align: center;
+}
+
+.connectStatusText.error {
+    color: #e34b5f;
+    background: #fff0f2;
+}
+
+@media (max-width: 760px) {
+    .exploreHero {
+        padding: 40px 22px 32px;
+    }
+
+    .exploreToolbar {
+        grid-template-columns: 1fr;
+    }
+
+    .skillsGrid {
+        grid-template-columns: 1fr;
+    }
+}

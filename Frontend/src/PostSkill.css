@@ -1,0 +1,293 @@
+.postSkillPage {
+    min-height: calc(100vh - 70px);
+    background:
+        radial-gradient(circle at 12% 20%, rgba(98, 60, 255, 0.1), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(75, 132, 255, 0.11), transparent 30%),
+        #ffffff;
+    color: #15152c;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.postSkillHero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 32px;
+    padding: 58px 80px 34px;
+    border-bottom: 1px solid #eceaf7;
+    background: linear-gradient(105deg, #ffffff 0%, #ffffff 55%, #f2efff 55.2%, #ebe7ff 100%);
+}
+
+.pageBadge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 0 14px;
+    color: #623cff;
+    background: #f0ebff;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 850;
+    margin-bottom: 16px;
+}
+
+.postSkillHero h1 {
+    margin: 0 0 14px;
+    color: #121226;
+    font-size: clamp(2.5rem, 5vw, 4.4rem);
+    line-height: 1;
+    font-weight: 850;
+}
+
+.postSkillHero p {
+    max-width: 590px;
+    margin: 0;
+    color: #555872;
+    font-size: 1.1rem;
+    line-height: 1.55;
+}
+
+.postSkillStats {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    gap: 16px;
+}
+
+.postSkillStats div {
+    padding: 22px 16px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid #ded9ff;
+    border-radius: 14px;
+    box-shadow: 0 18px 40px rgba(58, 44, 120, 0.1);
+}
+
+.postSkillStats strong {
+    display: block;
+    color: #623cff;
+    font-size: 1.9rem;
+    line-height: 1;
+}
+
+.postSkillStats span {
+    display: block;
+    margin-top: 8px;
+    color: #4c4f68;
+    font-size: 0.86rem;
+    font-weight: 650;
+}
+
+.postSkillContent {
+    display: grid;
+    grid-template-columns: minmax(0, 680px) 320px;
+    gap: 28px;
+    align-items: start;
+    width: min(1120px, calc(100% - 40px));
+    margin: 34px auto 60px;
+}
+
+.postSkillBox,
+.postingTips {
+    background: #ffffff;
+    border: 1px solid #e5e5f2;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(45, 37, 100, 0.08);
+}
+
+.postSkillBox {
+    padding: 34px;
+}
+
+.formHeader {
+    margin-bottom: 26px;
+}
+
+.formHeader h2 {
+    margin: 0 0 8px;
+    color: #15152c;
+    font-size: 1.8rem;
+}
+
+.formHeader p {
+    margin: 0;
+    color: #5d6078;
+    line-height: 1.5;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 18px;
+}
+
+.formRow {
+    margin-bottom: 18px;
+}
+
+.formRow label {
+    display: block;
+    margin-bottom: 8px;
+    color: #33364f;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.formRow input,
+.formRow textarea,
+.formRow select {
+    width: 100%;
+    box-sizing: border-box;
+    color: #17172f;
+    background: #fbfbff;
+    border: 1px solid #dfe0ee;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.formRow input,
+.formRow select {
+    height: 48px;
+    padding: 0 14px;
+}
+
+.formRow textarea {
+    min-height: 130px;
+    padding: 14px;
+    resize: vertical;
+}
+
+.formRow input::placeholder,
+.formRow textarea::placeholder {
+    color: #9699ad;
+}
+
+.formRow input:focus,
+.formRow textarea:focus,
+.formRow select:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: #623cff;
+    box-shadow: 0 0 0 4px rgba(98, 60, 255, 0.1);
+}
+
+.formError {
+    margin: 0 0 16px;
+    color: #e34b5f;
+    background: #fff0f2;
+    border: 1px solid #ffd5dc;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.submitBtn {
+    width: 100%;
+    min-height: 52px;
+    color: #ffffff;
+    background: #623cff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 850;
+    cursor: pointer;
+    box-shadow: 0 14px 32px rgba(98, 60, 255, 0.25);
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+
+.submitBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 38px rgba(98, 60, 255, 0.3);
+}
+
+.submitBtn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.postingTips {
+    padding: 28px;
+    position: sticky;
+    top: 92px;
+}
+
+.postingTips h3 {
+    margin: 0 0 20px;
+    color: #15152c;
+    font-size: 1.25rem;
+}
+
+.tipItem {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 12px;
+    align-items: start;
+    padding: 16px 0;
+    border-top: 1px solid #eceaf7;
+}
+
+.tipItem:first-of-type {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.tipItem span {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    color: #623cff;
+    background: #f0ebff;
+    border-radius: 50%;
+    font-weight: 900;
+}
+
+.tipItem p {
+    margin: 0;
+    color: #5d6078;
+    line-height: 1.45;
+    font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+    .postSkillHero {
+        grid-template-columns: 1fr;
+        padding: 44px 28px 30px;
+    }
+
+    .postSkillStats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .postSkillContent {
+        grid-template-columns: 1fr;
+    }
+
+    .postingTips {
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
+    .postSkillHero {
+        padding: 36px 20px 26px;
+    }
+
+    .postSkillContent {
+        width: min(100% - 24px, 1120px);
+        margin-top: 24px;
+    }
+
+    .postSkillBox,
+    .postingTips {
+        padding: 24px 18px;
+    }
+
+    .formGrid,
+    .postSkillStats {
+        grid-template-columns: 1fr;
+    }
+}

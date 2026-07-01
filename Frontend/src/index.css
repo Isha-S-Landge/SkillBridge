@@ -1,0 +1,55 @@
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --bg-input: #fbfbff;
+    --bg-hover: #f6f3ff;
+
+    --text-primary: #15152c;
+    --text-secondary: #5d6078;
+
+    --border-color: #e5e5f2;
+
+    --accent: #623cff;
+    --accent-hover: #4f2ee8;
+    --accent-light: #f0ebff;
+
+    font-family: Inter, Poppins, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
