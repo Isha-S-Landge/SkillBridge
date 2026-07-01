@@ -38,25 +38,33 @@ function App() {
         handleLogout,
     };
 
+    const isLoggedIn = user && token;
+
     return (
         <MyContext.Provider value={providerValues}>
             <BrowserRouter>
-                {!user || !token ? (
-                    <Login onLogin={handleLogin} />
-                ) : (
-                    <>
-                        <Navbar />
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/explore" element={<Explore />} />
-                            <Route path="/post-skill" element={<PostSkill />} />
-                            <Route path="/profile" element={<Profile />} />
-                            <Route path="*" element={<Navigate to="/" replace />} />
-                            <Route path="/forgot-password" element={<ForgotPassword />} />
-                            <Route path="/reset-password/:token" element={<ResetPassword />} />
-                        </Routes>
-                    </>
-                )}
+                {isLoggedIn && <Navbar />}
+                <Routes>
+                    <Route
+                        path="/"
+                        element={isLoggedIn ? <Home /> : <Login onLogin={handleLogin} />}
+                    />
+                    <Route
+                        path="/explore"
+                        element={isLoggedIn ? <Explore /> : <Navigate to="/" replace />}
+                    />
+                    <Route
+                        path="/post-skill"
+                        element={isLoggedIn ? <PostSkill /> : <Navigate to="/" replace />}
+                    />
+                    <Route
+                        path="/profile"
+                        element={isLoggedIn ? <Profile /> : <Navigate to="/" replace />}
+                    />
+                    <Route path="/forgot-password" element={<ForgotPassword />} />
+                    <Route path="/reset-password/:token" element={<ResetPassword />} />
+                    <Route path="*" element={<Navigate to="/" replace />} />
+                </Routes>
             </BrowserRouter>
         </MyContext.Provider>
     );
