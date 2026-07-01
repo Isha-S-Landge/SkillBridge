@@ -8,6 +8,8 @@ import Home from "./Home.jsx";
 import Explore from "./Explore.jsx";
 import PostSkill from "./PostSkill.jsx";
 import Profile from "./Profile.jsx";
+import ForgotPassword from "./ForgotPassword.jsx";
+import ResetPassword from "./ResetPassword.jsx";
 
 function App() {
     const [user, setUser] = useState(() => {
@@ -50,6 +52,8 @@ function App() {
                             <Route path="/post-skill" element={<PostSkill />} />
                             <Route path="/profile" element={<Profile />} />
                             <Route path="*" element={<Navigate to="/" replace />} />
+                            <Route path="/forgot-password" element={<ForgotPassword />} />
+                            <Route path="/reset-password/:token" element={<ResetPassword />} />
                         </Routes>
                     </>
                 )}

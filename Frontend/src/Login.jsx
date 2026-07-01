@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Login.css";
 
 function Login({ onLogin }) {
@@ -16,8 +17,8 @@ function Login({ onLogin }) {
         setLoading(true);
 
         const url = isSignup
-        ? `${import.meta.env.VITE_API_URL}/api/auth/signup`
-        : `${import.meta.env.VITE_API_URL}/api/auth/login`;
+            ? `${import.meta.env.VITE_API_URL}/api/auth/signup`
+            : `${import.meta.env.VITE_API_URL}/api/auth/login`;
 
         const body = isSignup
             ? { name, email, password, city }
@@ -152,6 +153,12 @@ function Login({ onLogin }) {
                             className="loginInput"
                         />
                     </div>
+
+                    {!isSignup && (
+                        <p style={{ textAlign: "right", fontSize: "0.85rem", marginTop: "-8px" }}>
+                            <Link to="/forgot-password">Forgot password?</Link>
+                        </p>
+                    )}
 
                     {error && <p className="loginError">{error}</p>}
 
