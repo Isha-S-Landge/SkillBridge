@@ -12,7 +12,7 @@ function Explore() {
 
     const fetchSkills = async () => {
         try {
-            const response = await fetch("http://localhost:8081/api/skills");
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/skills`);
             const res = await response.json();
             setSkills(res);
         } catch (err) {
@@ -24,7 +24,7 @@ function Explore() {
 
     const sendConnectRequest = async (skillId, receiverId) => {
         try {
-            const response = await fetch("http://localhost:8081/api/connections", {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/connections`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

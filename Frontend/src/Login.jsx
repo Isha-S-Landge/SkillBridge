@@ -16,8 +16,8 @@ function Login({ onLogin }) {
         setLoading(true);
 
         const url = isSignup
-            ? "http://localhost:8081/api/auth/signup"
-            : "http://localhost:8081/api/auth/login";
+        ? `${import.meta.env.VITE_API_URL}/api/auth/signup`
+        : `${import.meta.env.VITE_API_URL}/api/auth/login`;
 
         const body = isSignup
             ? { name, email, password, city }

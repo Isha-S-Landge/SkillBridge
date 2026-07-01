@@ -26,7 +26,7 @@ function PostSkill() {
         setLoading(true);
 
         try {
-            const response = await fetch("http://localhost:8081/api/skills", {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/skills`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

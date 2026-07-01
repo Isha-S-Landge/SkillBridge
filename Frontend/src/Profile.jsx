@@ -11,7 +11,7 @@ function Profile() {
 
     const fetchMySkills = async () => {
         try {
-            const response = await fetch("http://localhost:8081/api/skills/my-skills", {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/skills/my-skills`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
 
@@ -26,7 +26,7 @@ function Profile() {
 
     const deleteSkill = async (skillId) => {
         try {
-            await fetch(`http://localhost:8081/api/skills/${skillId}`, {
+            await fetch(`${import.meta.env.VITE_API_URL}/api/skills/${skillId}`, {
                 method: "DELETE",
                 headers: { Authorization: `Bearer ${token}` },
             });
