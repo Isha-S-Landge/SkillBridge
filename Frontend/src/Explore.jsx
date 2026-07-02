@@ -2,6 +2,16 @@ import "./Explore.css";
 import { useContext, useState, useEffect } from "react";
 import { MyContext } from "./MyContext.jsx";
 
+const getUserIdFromToken = (token) => {
+    if (!token) return null;
+    try {
+        const payload = JSON.parse(atob(token.split(".")[1]));
+        return payload.userId;
+    } catch {
+        return null;
+    }
+};
+
 function Explore() {
     const { token } = useContext(MyContext);
     const [skills, setSkills] = useState([]);
@@ -9,6 +19,8 @@ function Explore() {
     const [connectStatus, setConnectStatus] = useState({});
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("All");
+
+    const currentUserId = getUserIdFromToken(token);
 
     const fetchSkills = async () => {
         try {
@@ -86,8 +98,9 @@ function Explore() {
         const matchesSearch = searchText.includes(searchTerm.toLowerCase());
         const matchesCategory =
             selectedCategory === "All" || skill.category === selectedCategory;
+        const isNotOwnSkill = skill.userId?._id !== currentUserId;
 
-        return matchesSearch && matchesCategory;
+        return matchesSearch && matchesCategory && isNotOwnSkill;
     });
 
     return (
