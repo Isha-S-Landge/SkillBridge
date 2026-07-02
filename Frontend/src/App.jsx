@@ -10,6 +10,7 @@ import PostSkill from "./PostSkill.jsx";
 import Profile from "./Profile.jsx";
 import ForgotPassword from "./ForgotPassword.jsx";
 import ResetPassword from "./ResetPassword.jsx";
+import Connections from "./Connections.jsx";
 
 function App() {
     const [user, setUser] = useState(() => {
@@ -60,6 +61,10 @@ function App() {
                     <Route
                         path="/profile"
                         element={isLoggedIn ? <Profile /> : <Navigate to="/" replace />}
+                    />
+                    <Route
+                        path="/connections"
+                        element={isLoggedIn ? <Connections /> : <Navigate to="/" replace />}
                     />
                     <Route path="/forgot-password" element={<ForgotPassword />} />
                     <Route path="/reset-password/:token" element={<ResetPassword />} />
