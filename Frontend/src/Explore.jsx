@@ -22,6 +22,28 @@ function Explore() {
         setLoading(false);
     };
 
+    const fetchSentRequests = async () => {
+        try {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/connections/sent`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            const res = await response.json();
+
+            if (Array.isArray(res)) {
+                const statusMap = {};
+                res.forEach((conn) => {
+                    statusMap[conn.skillId] = "Request sent!";
+                });
+                setConnectStatus(statusMap);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     const sendConnectRequest = async (skillId, receiverId) => {
         try {
             const response = await fetch(`${import.meta.env.VITE_API_URL}/api/connections`, {
@@ -53,6 +75,7 @@ function Explore() {
 
     useEffect(() => {
         fetchSkills();
+        fetchSentRequests();
     }, []);
 
     const categories = ["All", ...new Set(skills.map((skill) => skill.category).filter(Boolean))];

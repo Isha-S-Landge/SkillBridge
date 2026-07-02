@@ -26,6 +26,10 @@ function Navbar() {
                     Become a Mentor
                 </NavLink>
 
+                <NavLink to="/connections">
+                    Connections
+                </NavLink>
+
                 <a href="/#how-it-works">
                     How It Works
                 </a>
